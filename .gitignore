@@ -1,1 +1,2 @@
 SECRET=somehashvalue
+node_modules/
