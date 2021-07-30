@@ -1,0 +1,26 @@
+.navbar {
+  position: relative;
+  background-color: white;
+  border-bottom: 0.4px solid #E5E5E5;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+}
+
+.navbar-brand {
+  position: absolute;
+  left: 50%;
+  margin-left: -50px !important;  /* 50% of your logo width */
+  display: block;
+}
+
+.active::after {
+  content: "";
+  position: absolute;
+  width: 75px;
+  height: 4px;
+  background-color: rgb(29, 205, 254);
+  left: 12px;
+  bottom: 0px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
