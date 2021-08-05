@@ -1,19 +1,23 @@
-const Post = require('../models/post');
-const User = require('../models/user');
-const Comment = require('../models/comment');
+const Restaurant = require('../models/restaurant');
 
 module.exports = (app) => {
+  // INDEX
+  // app.get('/', async (req, res) => {
+  //   const { user } = req;
+  //   const currentUser = req.user;
+  //   try { 
+  //     const posts = await Post.find({}).lean().populate('author');
+  //     res.render('posts-index', { posts, currentUser });
+  //   } catch (err) {
+  //     console.log(err.message);
+  //   };
+  // });
 
-  // Show all restaurants
-  app.get('/', (req, res) => {
-    const { user } = req;
-    const currentUser = req.user;
-    // console.log(currentUser);
-    // console.log(req.cookies);
-    Post.find({}).lean().populate('author')
-      .then((posts) => res.render('posts-index', { posts, currentUser }))
+  app.get('/', function (req, res) {
+    Restaurant.find({}).lean()
+      .then((restaurants) => res.render('home', { restaurants }))
       .catch((err) => {
         console.log(err.message);
-      });
+    })
   });
-}
+};

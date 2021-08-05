@@ -23,26 +23,44 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav">
+            {{!-- Delivery or Pick Up Buttons --}}
             <li class="nav-item">
               <a class="delivery nav-link active" href="#">Delivery</a>
             </li>
             <li class="nav-item">
-                <a class="pick-up nav-link" href="#">Pick Up</a>
+              <a class="pick-up nav-link" href="#">Pick Up</a>
             </li>
-          </ul>
-          {{!-- <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form> --}}
-          <ul class="nav navbar-nav navbar-right">
-            {{#if currentUser}}
-              <li class='p-2'><a href="/logout">Logout</a></li>
-            {{else}}
-              <li class='p-2'><a href="/login">Login</a></li>
-              <li class='p-2'><a href="/sign-up">Sign Up</a></li>
-            {{/if}}
+            <div class="nav-vertical-line"></div>
+            {{!-- Drop Down For Delivery Time--}}
+            <div class="dropdown">
+              <a class="time dropdown-toggle" role="button" data-bs-toggle="dropdown">
+                Now
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <li><a class="dropdown-item" href="#">  Now</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">1 Hour</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">2 Hour</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">3 Hour</a></li>
+              </ul>
+            </div>
+            <p class="nav-text">to</p>
+            {{!-- Drop Down For Delivery Location--}}
+            <div class="dropdown">
+              <a class="location dropdown-toggle" role="button" data-bs-toggle="dropdown">
+                San Francisco
+              </a>
+              <ul class="search-address dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <div class="mt-1 mb-2 mx-4">
+                  <label class="form-label">Search for a new Address</label>
+                  <input type="address" class="form-control" id="exampleDropdownFormPassword2" placeholder="Address">
+                </div>
+              </ul>
+            </div>
           </ul>
         </div>
       </div>
@@ -51,7 +69,8 @@
       {{{body}}}
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="/public/js/header.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+          crossorigin="anonymous"></script>
+    <script rel="script" src="/js/header.js"></script>
   </body>
 </html>

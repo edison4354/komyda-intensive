@@ -13,19 +13,65 @@
   display: block;
 }
 
-.active::before {
-  content: "";
-  background-color: rgb(0, 0, 0);
+.active {
+  border-bottom: 4px solid rgb(29, 205, 254);
+  margin-bottom: -0.2rem;
 }
 
-.active::after {
-  content: "";
-  position: absolute;
-  width: 75px;
-  height: 4px;
-  background-color: rgb(29, 205, 254);
-  left: 12px;
-  bottom: 0px;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
+.nav-vertical-line {
+  width: 0px;
+  height: 28px;
+  border: 1px solid rgb(231, 231, 231);
+  border-radius: 2px;
+  margin-top: 7px;
+  margin-left: 10px;
+}
+
+.dropdown-toggle::after {
+  content: none;
+  text-decoration: none;
+}
+
+a.time {
+  color: rgb(29, 205, 254);
+  text-decoration: none;
+  padding-right: .3rem;
+  padding-left: 1rem;
+  display: block;
+  padding-top: .5rem;
+}
+
+.nav-text {
+  display: block;
+  padding-top: .75rem;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  font-size: .8rem;
+  color: grey;
+}
+
+a.location {
+  color: rgb(29, 205, 254);
+  text-decoration: none;
+  padding-right: .3rem;
+  padding-left: .3rem;
+  display: block;
+  padding-top: .5rem;
+}
+
+.search-address {
+  min-width: 20rem;
+}
+
+.form-control {
+  border: none;
+  background-color: #F7F7F7;
+}
+
+.form-label {
+  font-weight: bold;
+}
+
+.row {
+  padding-top: 5rem;
 }

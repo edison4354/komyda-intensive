@@ -1,2 +1,12 @@
-<h1>Hello World</h1>
-<a href="/restaurants/new">New Restaurants</a>
+<div class="row justify-content-center">
+    {{#each restaurants}}
+      <div class="card my-2 mx-2" style="width: 18rem;">
+        <img class="card-img-top" src={{this.picture}} alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{this.title}}</h5>
+          <p class="card-text">{{this.platform}}</p>
+          <a href="#" class="btn btn-primary">{{this.price}}</a>
+        </div>
+      </div>
+    {{/each}}
+</div>

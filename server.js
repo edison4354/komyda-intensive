@@ -7,13 +7,8 @@ app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 app.use(express.static('public'));
 
-app.get('/', function (req, res) {
-    res.render('home');
-});
-
-app.get('/restaurants/new', function (req, res) {
-  res.render('restaurants-new', {});
-});
+require('./controllers/restaurants')(app);
+require('./data/komyda-db');
 
 module.exports = app;
 
