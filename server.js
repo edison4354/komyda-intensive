@@ -5,6 +5,7 @@ var exphbs  = require('express-handlebars');
 
 // App Setup
 var app = express();
+const port = process.env.PORT || 5000
 
 // Middleware
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
@@ -17,6 +18,7 @@ require('./data/komyda-db');
 module.exports = app;
 
 // Start Server
-app.listen(process.env.PORT, () => {
-  console.log(`App listening at http://localhost:${process.env.PORT}!`)
+app.listen(port, () => {
+  console.log(`App listening at http://localhost:${port}!`)
 })
+
